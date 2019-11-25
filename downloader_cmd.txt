@@ -1,0 +1,3 @@
+googleimagesdownload --keywords "food,junk food,healthy food,french food,mexican food,italian food,street food,chinese food,thai food, dinner, breakfast, dessert" --limit 1000 --usage_rights labeled-for-reuse --output_directory images --size ">4MP" --format jpg --chromedriver chromedriver.exe
+
+googleimagesdownload --keywords "food" --limit 101 --usage_rights labeled-for-reuse --output_directory images --size ">4MP" --format jpg --chromedriver chromedriver.exe

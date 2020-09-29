@@ -3,6 +3,7 @@ from PIL import Image
 import glob,os,shutil
 from timeit import default_timer as timer
 
+
 def download(dict_args):
 	response = google_images_download.googleimagesdownload()
 	response.download(dict_args)
@@ -21,18 +22,14 @@ def resize(size, keywords):
 		shutil.rmtree("images/" + folder, ignore_errors=True)
 		time = "{0:.2f}".format(timer()-start)
 		print(f"Folder {folder}/ images resized successfully ({time}s)\n")
+ 
+KEYWORDS = "streetart"
+LIMIT_PER_KEYWORD = 100
+USAGE_RIGHTS = "labeled-for-reuse"
+args = {"keywords":KEYWORDS, "limit":LIMIT_PER_KEYWORD, "output_directory":"images", "print_urls":False, "print_size":False, "format": "jpg", "size":">4MP"}
+#args = {"keywords":KEYWORDS, "limit":LIMIT_PER_KEYWORD, "usage_rights":USAGE_RIGHTS, "output_directory":"images", "print_urls":False, "print_size":False, "format": "jpg"}
+#https://google-images-download.readthedocs.io/en/latest/arguments.html FOR DOCUMENTATION
+size = 1080, 1080
 
-def main():
-	KEYWORDS = "streetart"
-	LIMIT_PER_KEYWORD = 100
-	USAGE_RIGHTS = "labeled-for-reuse"
-	args = {"keywords":KEYWORDS, "limit":LIMIT_PER_KEYWORD, "output_directory":"images", "print_urls":False, "print_size":False, "format": "jpg", "size":">4MP"}
-	#args = {"keywords":KEYWORDS, "limit":LIMIT_PER_KEYWORD, "usage_rights":USAGE_RIGHTS, "output_directory":"images", "print_urls":False, "print_size":False, "format": "jpg"}
-	#https://google-images-download.readthedocs.io/en/latest/arguments.html FOR DOCUMENTATION
-	size = 1080, 1080
-
-	download(args)
-	#resize(size, KEYWORDS)
-
-if __name__ == '__main__':
-    main()
+download(args)
+#resize(size, KEYWORDS)

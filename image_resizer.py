@@ -1,7 +1,7 @@
 from PIL import Image
 import glob, os
 
-size = 2048, 2048
+size = 1080, 1080
 number = 0
 
 for infile in glob.glob("images/*"):

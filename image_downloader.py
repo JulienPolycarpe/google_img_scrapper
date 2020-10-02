@@ -26,7 +26,7 @@ def resize(size, keywords):
 KEYWORDS = "streetart"
 LIMIT_PER_KEYWORD = 100
 USAGE_RIGHTS = "labeled-for-reuse"
-args = {"keywords":KEYWORDS, "limit":LIMIT_PER_KEYWORD, "output_directory":"images", "print_urls":False, "print_size":False, "format": "jpg", "size":">4MP"}
+args = {"keywords":KEYWORDS, "limit":LIMIT_PER_KEYWORD, "output_directory":"images", "print_urls":False, "print_size":False, "format": "jpg"}#, "size":">4MP"}
 #args = {"keywords":KEYWORDS, "limit":LIMIT_PER_KEYWORD, "usage_rights":USAGE_RIGHTS, "output_directory":"images", "print_urls":False, "print_size":False, "format": "jpg"}
 #https://google-images-download.readthedocs.io/en/latest/arguments.html FOR DOCUMENTATION
 size = 1080, 1080
